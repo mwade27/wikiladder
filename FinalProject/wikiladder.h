@@ -16,7 +16,9 @@ class WikiLadder{
         ~WikiLadder();
 
         /*
-            gets page content of the wikipedia page       
+            gets page html content of the wikipedia page
+            It uses curl/curl.h library to read in the html content
+            and stores it in a string.       
         */
         std::string fetchpagecontent(const std::string& pageTitle);
 
