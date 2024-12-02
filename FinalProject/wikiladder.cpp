@@ -100,8 +100,51 @@ std::vector<std::string> WikiLadder::parseLinks(const std::string& pageContent){
         
             links.push_back(link);
     }
+    
 
     return links;
+}
+
+std::vector<std::string> WikiLadder::findLadder(const std::string& startPage, const std::string& endPage){
+    std::queue<std::pair<std::string, std::vector<std::string>>> toVisit;
+
+    //used set since it faster to access then a vector
+    std::unordered_set<std::string>visited;
+
+
+    toVisit.push({startPage, {startPage}});
+    visited.insert(startPage);
+
+    while(!toVisit.empty()){
+        auto[currentPage,path] = toVisit.front();
+        toVisit.pop();
+
+
+        std::string content = fetchpagecontent(currentPage);
+
+        if(content.find(endPage) != std::string::npos){
+            path.push_back(endPage);
+            return path;
+        }
+        std::vector<std::string> links = parseLinks(content);
+
+        for(const std::string& link: links){
+            if(visited.count(link) > 0){
+                continue;
+            }
+            if (link == endPage){
+                path.push_back(link);
+                return path;
+            }
+
+            std::vector<std::string> newPath = path;
+            newPath.push_back(link);
+            toVisit.push({link,newPath});
+            visited.insert(link);
+        }
+    }
+    return{};
+
 }
 
 
