@@ -10,8 +10,9 @@
 class WikiLadder{
 
     public:
+        //Constructor 
         WikiLadder();
-
+        //Deconstructor
         ~WikiLadder();
 
         /*
