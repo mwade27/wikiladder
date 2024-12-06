@@ -1,0 +1,93 @@
+\doxysection{Wiki\+Ladder Class Reference}
+\hypertarget{class_wiki_ladder}{}\label{class_wiki_ladder}\index{WikiLadder@{WikiLadder}}
+
+
+A class to find a ladder between two Wikipedia pages using the BFS algorithm.  
+
+
+
+
+{\ttfamily \#include $<$wikiladder.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_wiki_ladder_ac16e5fcd541efa45ce631aa207dffedf}\label{class_wiki_ladder_ac16e5fcd541efa45ce631aa207dffedf} 
+{\bfseries Wiki\+Ladder} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{class_wiki_ladder}{Wiki\+Ladder}. Initializes the \doxylink{class_wiki_ladder}{Wiki\+Ladder} object. \end{DoxyCompactList}\item 
+\Hypertarget{class_wiki_ladder_ab4d54b2c8a24c0d7ecd3a5c8616de63b}\label{class_wiki_ladder_ab4d54b2c8a24c0d7ecd3a5c8616de63b} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Wiki\+Ladder} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{class_wiki_ladder}{Wiki\+Ladder}. Cleans up any resources if necessary. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_wiki_ladder_aa7f4bed24d9b84a7052621849fdadfac}{fetchpagecontent}} (const std\+::string \&page\+Title)
+\begin{DoxyCompactList}\small\item\em Fetches the HTML content of a Wikipedia page. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_wiki_ladder_abe30fdfd0b88cd6f48b2576c5fddd3a6}{parse\+Links}} (const std\+::string \&html\+Content)
+\begin{DoxyCompactList}\small\item\em Parses the links from the fetched HTML content. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_wiki_ladder_a079d48283afe3309519fea5c78464387}{find\+Ladder}} (const std\+::string \&start\+Page, const std\+::string \&target\+Page)
+\begin{DoxyCompactList}\small\item\em Finds the ladder (path) between two Wikipedia pages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to find a ladder between two Wikipedia pages using the BFS algorithm. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_wiki_ladder_aa7f4bed24d9b84a7052621849fdadfac}\index{WikiLadder@{WikiLadder}!fetchpagecontent@{fetchpagecontent}}
+\index{fetchpagecontent@{fetchpagecontent}!WikiLadder@{WikiLadder}}
+\doxysubsubsection{\texorpdfstring{fetchpagecontent()}{fetchpagecontent()}}
+{\footnotesize\ttfamily \label{class_wiki_ladder_aa7f4bed24d9b84a7052621849fdadfac} 
+std\+::string Wiki\+Ladder\+::fetchpagecontent (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{page\+Title}{}\end{DoxyParamCaption})}
+
+
+
+Fetches the HTML content of a Wikipedia page. 
+
+This method uses the curl/curl.\+h library to fetch the HTML content of the given Wikipedia page title. 
+\begin{DoxyParams}{Parameters}
+{\em page\+Title} & The title of the Wikipedia page. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string containing the HTML content of the page. 
+\end{DoxyReturn}
+\Hypertarget{class_wiki_ladder_a079d48283afe3309519fea5c78464387}\index{WikiLadder@{WikiLadder}!findLadder@{findLadder}}
+\index{findLadder@{findLadder}!WikiLadder@{WikiLadder}}
+\doxysubsubsection{\texorpdfstring{findLadder()}{findLadder()}}
+{\footnotesize\ttfamily \label{class_wiki_ladder_a079d48283afe3309519fea5c78464387} 
+std\+::vector$<$ std\+::string $>$ Wiki\+Ladder\+::find\+Ladder (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{start\+Page}{, }\item[{const std\+::string \&}]{target\+Page}{}\end{DoxyParamCaption})}
+
+
+
+Finds the ladder (path) between two Wikipedia pages. 
+
+This method implements the Breadth-\/\+First Search (BFS) algorithm to find the shortest path (ladder) between the start and target Wikipedia pages. It uses a queue to track the paths and an unordered set to track visited pages. 
+\begin{DoxyParams}{Parameters}
+{\em start\+Page} & The starting Wikipedia page. \\
+\hline
+{\em target\+Page} & The target Wikipedia page. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of strings representing the path from the start page to the target page. 
+\end{DoxyReturn}
+\Hypertarget{class_wiki_ladder_abe30fdfd0b88cd6f48b2576c5fddd3a6}\index{WikiLadder@{WikiLadder}!parseLinks@{parseLinks}}
+\index{parseLinks@{parseLinks}!WikiLadder@{WikiLadder}}
+\doxysubsubsection{\texorpdfstring{parseLinks()}{parseLinks()}}
+{\footnotesize\ttfamily \label{class_wiki_ladder_abe30fdfd0b88cd6f48b2576c5fddd3a6} 
+std\+::vector$<$ std\+::string $>$ Wiki\+Ladder\+::parse\+Links (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{html\+Content}{}\end{DoxyParamCaption})}
+
+
+
+Parses the links from the fetched HTML content. 
+
+This method extracts all the valid Wikipedia links from the given HTML content. 
+\begin{DoxyParams}{Parameters}
+{\em html\+Content} & The HTML content of the page. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of strings containing the extracted links. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+wikiladder.\+h\end{DoxyCompactItemize}

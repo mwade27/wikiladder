@@ -10,9 +10,9 @@ int main(){
     //std::string htmlContent = wikiLadder.fetchpagecontent(pageTitle);
 
     
-
+    
     std::string startPage = "Dog";
-    std::string endPage = "Fever";
+    std::string endPage = "Moose";
 
     std::vector<std::string> ladder = wikiLadder.findLadder(startPage, endPage);
 

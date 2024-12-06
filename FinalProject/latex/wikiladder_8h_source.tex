@@ -1,0 +1,35 @@
+\doxysection{wikiladder.\+h}
+\hypertarget{wikiladder_8h_source}{}\label{wikiladder_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ WIKILADDER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ WIKILADDER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <unordered\_set>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_wiki_ladder}{WikiLadder}}\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_wiki_ladder_ac16e5fcd541efa45ce631aa207dffedf}{WikiLadder}}();}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_wiki_ladder_ab4d54b2c8a24c0d7ecd3a5c8616de63b}{\string~WikiLadder}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00027\ \ \ \ \ std::string\ \mbox{\hyperlink{class_wiki_ladder_aa7f4bed24d9b84a7052621849fdadfac}{fetchpagecontent}}(\textcolor{keyword}{const}\ std::string\&\ pageTitle);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00034\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{class_wiki_ladder_abe30fdfd0b88cd6f48b2576c5fddd3a6}{parseLinks}}(\textcolor{keyword}{const}\ std::string\&\ htmlContent);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00044\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{class_wiki_ladder_a079d48283afe3309519fea5c78464387}{findLadder}}(\textcolor{keyword}{const}\ std::string\&\ startPage,\ \textcolor{keyword}{const}\ std::string\&\ targetPage);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00051\ \ \ \ \ std::unordered\_set<std::string>\ visited;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ isvalidlink(\textcolor{keyword}{const}\ std::string\ link);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ baseURL\ =\ \textcolor{stringliteral}{"{}https://en.wikipedia.org/wiki/"{}};}
+\DoxyCodeLine{00064\ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -17,13 +17,19 @@ WikiLadder::WikiLadder(){}
 
 WikiLadder::~WikiLadder(){}
 
+/*
+    Helper function that help store the 
+    data of a webpage 
 
+*/
 static size_t writeCallback(char* ptr, size_t size, size_t nmemb, std::string* data) {
     if (data) {
         data->append(ptr, size * nmemb);
-        return size * nmemb; // Return the size of the data written
+        return size * nmemb; 
+        //return the size of the data written
     }
-    return 0; // If no data, return 0
+    //returns 0 if no data is found 
+    return 0;
 }
 
 
@@ -55,7 +61,7 @@ std::string WikiLadder::fetchpagecontent(const std::string& pageTitle){
 
 
 
-
+    //performs curl operations
    
     res = curl_easy_perform(curl);
 
@@ -113,6 +119,9 @@ std::vector<std::string> WikiLadder::parseLinks(const std::string& pageContent){
             string::npos is the largest possible size you could return for a specific element
              in c++
             npos is used with find to help with the indexing
+
+            added too many links slowed down 
+            filtering speeds up the search process
            
         */
         if( link.find("/wiki/Category:") != std::string::npos ||
@@ -140,7 +149,15 @@ std::vector<std::string> WikiLadder::parseLinks(const std::string& pageContent){
     return links;
 }
 
+/*
 
+    Using BFS to find shortest path 
+    Could optimize more with more time
+    Maybe start search going both ways to 
+    speed up process
+    Use threads to search multiple pages at once
+
+*/
 std::vector<std::string> WikiLadder::findLadder(const std::string& startPage, const std::string& endPage){
     std::queue<std::pair<std::string, std::vector<std::string>>> toVisit;
 

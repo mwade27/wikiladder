@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/testingExample.dir/test.cpp.o -o testingExample  -Wl,-rpath,/Users/maxwellwade/Desktop/Cs300/CS300/FinalProject/build lib/libgtest_main.a libfinal.dylib lib/libgtest.a
