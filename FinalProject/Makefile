@@ -1,6 +1,6 @@
 # Compiler and flags
 CXX = g++
-FLAGS = -std=c++20
+FLAGS = -std=c++2a
 
 # List of source files
 SOURCE = main.cpp wikiladder.cpp

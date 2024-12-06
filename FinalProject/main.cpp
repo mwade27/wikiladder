@@ -12,7 +12,7 @@ int main(){
     
 
     std::string startPage = "Dog";
-    std::string endPage = "/wiki/Greeks";
+    std::string endPage = "Fever";
 
     std::vector<std::string> ladder = wikiLadder.findLadder(startPage, endPage);
 
@@ -24,18 +24,5 @@ int main(){
     } else {
         std::cout << "No ladder found.\n";
     }
-    /*
-    std::string startPage, endPage;
-
-
-    std::cout << "Enter a starting page: " << std::endl;
-
-    std::cin >> startPage;
-
-    std::cout << "Enter a end page: " << std::endl;
-
-    std::cin >> endPage;
-    */
-
 
 }
